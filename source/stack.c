@@ -6,7 +6,7 @@
 /*   By: akaniber <akaniber@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 16:02:14 by akaniber          #+#    #+#             */
-/*   Updated: 2023/04/03 12:41:31 by akaniber         ###   ########.fr       */
+/*   Updated: 2023/04/03 17:22:59 by akaniber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ t_stack	get_stack(char *str)
 	list = ft_split(str, ' ');
 	while (list[stack.size_a])
 		stack.size_a++;
-	stack.list_a = (t_item *)malloc(sizeof(t_item) * stack.size_a + 1);
-	stack.list_b = (t_item *)malloc(sizeof(t_item) * stack.size_a + 1);
+	stack.list_a = (t_item *)malloc(sizeof(t_item) * (stack.size_a + 1));
+	stack.list_b = (t_item *)malloc(sizeof(t_item) * (stack.size_a + 1));
 	i = 0;
 	while (i < stack.size_a)
 	{
@@ -50,9 +50,9 @@ t_stack	get_stack(char *str)
 		else
 			stack.list_a[i].next = &stack.list_a[0];
 		if (i == 0)
-			stack.list_a[i].previous = &stack.list_a[stack.size_a - 1];
+			stack.list_a[i].prev = &stack.list_a[stack.size_a - 1];
 		else
-			stack.list_a[i].previous = &stack.list_a[i - 1];
+			stack.list_a[i].prev = &stack.list_a[i - 1];
 		i++;
 	}
 	stack.size_a = stack.size_a;

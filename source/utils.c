@@ -6,7 +6,7 @@
 /*   By: akaniber <akaniber@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 13:55:01 by akaniber          #+#    #+#             */
-/*   Updated: 2023/04/03 14:51:12 by akaniber         ###   ########.fr       */
+/*   Updated: 2023/04/03 17:25:05 by akaniber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,24 +50,28 @@ void	swap(t_parameters parameters)
 
 void rotate(t_parameters parameters)
 {
-	t_item  tmp;
+    t_item  tmp;
     int     i;
 
     parameters.build = rotate;
     parameters = router(parameters);
     i = 0;
-	if (parameters.direction == UP)
-		i = 0;
-	else
-		i = parameters.size - 2;
-	while (parameters.size - 2 >= i && i >= 0)
-	{
-		tmp.value = parameters.list[i].previous->value;
-		parameters.list[i].previous->value = parameters.list[i].value;
-		parameters.list[i].value = tmp.value;
-		if (parameters.direction == UP)
-			i++;
-		else
-			i--;
-	}
+    if (parameters.direction == DOWN)
+        i = parameters.size - 2;
+    while (parameters.size - 2 >= i && i >= 0)
+    {
+        tmp.value = parameters.list[i].prev->value;
+        parameters.list[i].prev->value = parameters.list[i].value;
+        parameters.list[i].value = tmp.value;
+        if (parameters.direction == UP)
+            i++;
+        else
+            i--;
+    }
+	//parameters.list[parameters.delete].prev->next = parameters.list[parameters.delete].next;
+	//parameters.list[parameters.delete].next->prev = parameters.list[parameters.delete].prev;
+	//ft_memset(&parameters.list[parameters.delete], 0, sizeof(parameters.list[parameters.delete]));
+	//parameters.list[parameters.delete].next = NULL;
+	//parameters.list[parameters.delete].prev = NULL;
+	//parameters.list[parameters.delete] = parameters.list[parameters.size + 2];
 }

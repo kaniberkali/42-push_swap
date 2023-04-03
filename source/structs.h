@@ -6,7 +6,7 @@
 /*   By: akaniber <akaniber@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 15:03:31 by akaniber          #+#    #+#             */
-/*   Updated: 2023/04/03 12:54:39 by akaniber         ###   ########.fr       */
+/*   Updated: 2023/04/03 16:29:12 by akaniber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ typedef struct s_item
 	int				index;
 	int				value;
 	struct s_item	*next;
-	struct s_item	*previous;
+	struct s_item	*prev;
 }	t_item;
 
 typedef struct s_stack
