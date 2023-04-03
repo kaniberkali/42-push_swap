@@ -6,11 +6,27 @@
 /*   By: akaniber <akaniber@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 16:02:14 by akaniber          #+#    #+#             */
-/*   Updated: 2023/04/01 16:54:45 by akaniber         ###   ########.fr       */
+/*   Updated: 2023/04/03 12:41:31 by akaniber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	check_stack_type(char *str)
+{
+	int	i;
+
+	i = 0;
+	if (str[i] == '-')
+		i++;
+	while (str[i])
+	{
+		if (!((str[i] >= '0' && str[i] <= '9') || str[i] == ' '))
+			return (0);
+		i++;
+	}
+	return (1);
+}
 
 t_stack	get_stack(char *str)
 {
@@ -29,12 +45,12 @@ t_stack	get_stack(char *str)
 	{
 		stack.list_a[i].index = i;
 		stack.list_a[i].value = ft_atoi(list[i]);
-		if (i < stack.size_a + 1)
-			stack.list_a[i].next = NULL;
-		else
+		if (i < stack.size_a - 1)
 			stack.list_a[i].next = &stack.list_a[i + 1];
+		else
+			stack.list_a[i].next = &stack.list_a[0];
 		if (i == 0)
-			stack.list_a[i].previous = NULL;
+			stack.list_a[i].previous = &stack.list_a[stack.size_a - 1];
 		else
 			stack.list_a[i].previous = &stack.list_a[i - 1];
 		i++;
