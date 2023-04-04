@@ -6,7 +6,7 @@
 /*   By: akaniber <akaniber@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 15:03:31 by akaniber          #+#    #+#             */
-/*   Updated: 2023/04/03 16:29:12 by akaniber         ###   ########.fr       */
+/*   Updated: 2023/04/04 13:35:53 by akaniber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ typedef struct s_parameters
 	int				process;
 	int				direction;
 	int				delete;
-	int				size;
+	int				*size;
 }	t_parameters;
 
 #endif

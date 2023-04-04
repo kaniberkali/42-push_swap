@@ -6,7 +6,7 @@
 /*   By: akaniber <akaniber@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 14:30:47 by akaniber          #+#    #+#             */
-/*   Updated: 2023/04/03 17:06:23 by akaniber         ###   ########.fr       */
+/*   Updated: 2023/04/04 14:46:57 by akaniber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ int	main(int ac, char **av)
 		ft_memset(&parameters, 0, sizeof(parameters));
 		parameters.stack = &stack;
 		parameters.process = LIST_A;
-		parameters.direction = UP;
-		parameters.delete = 1;
+		parameters.delete = -1;
+		parameters.direction = DOWN;
 		rotate(parameters);
 		parameters.direction = UP;
 		i = 0;

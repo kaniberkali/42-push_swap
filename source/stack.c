@@ -6,7 +6,7 @@
 /*   By: akaniber <akaniber@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 16:02:14 by akaniber          #+#    #+#             */
-/*   Updated: 2023/04/03 17:22:59 by akaniber         ###   ########.fr       */
+/*   Updated: 2023/04/04 13:12:18 by akaniber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,10 @@ t_stack	get_stack(char *str)
 			stack.list_a[i].prev = &stack.list_a[stack.size_a - 1];
 		else
 			stack.list_a[i].prev = &stack.list_a[i - 1];
+		free(list[i]);
 		i++;
 	}
 	stack.size_a = stack.size_a;
+	free(list);
 	return (stack);
 }
