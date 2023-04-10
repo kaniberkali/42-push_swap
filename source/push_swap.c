@@ -6,16 +6,47 @@
 /*   By: akaniber <akaniber@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 14:30:47 by akaniber          #+#    #+#             */
-/*   Updated: 2023/04/04 14:46:57 by akaniber         ###   ########.fr       */
+/*   Updated: 2023/04/10 16:43:14 by akaniber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+void test(t_stack stack)
+{
+	int	i;
+	
+	i = 0;
+	ft_printf("----------------LIST A:%d--------------\n", stack.size_a);
+	while (stack.size_a > i)
+	{
+		ft_printf("[%d] ",stack.list_a[i].value);
+		if (stack.list_a[i].next != NULL)
+			ft_printf("-> [%d]\n", stack.list_a[i].next->value);
+		else
+			ft_printf("-> NULL\n");
+		i++;
+	}
+	ft_printf("--------------------------------------\n\n");
+	ft_printf("----------------LIST B:%d--------------\n",stack.size_b);
+	i = 0;
+	while (stack.size_b > i)
+	{
+		ft_printf("[%d] ", stack.list_b[i].value);
+		if (stack.list_b[i].next != NULL)
+			ft_printf("-> [%d]\n",stack.list_b[i].next->value);
+		else
+			ft_printf("-> NULL\n");
+		i++;
+	}
+	ft_printf("--------------------------------------\n");
+}
+
 int	main(int ac, char **av)
 {
 	t_stack	stack;
 	char	*numbers;
+	char	**data;
 	int	i;
 
 	i = 1;
@@ -25,41 +56,17 @@ int	main(int ac, char **av)
 		numbers = ft_strjoin(numbers, " ");
 		i++;
 	}
-	if (check_stack_type(numbers))
+	if (numbers)
 	{
-		stack = get_stack(numbers);
-		i =0;
-		while (i < stack.size_a)
-		{
-			if (stack.list_a[i].prev != NULL)
-				ft_printf("previous: [%d, %d] ", stack.list_a[i].prev->index, stack.list_a[i].prev->value);
-			ft_printf("current: [%d, %d] ", stack.list_a[i].index, stack.list_a[i].value);
-			if (stack.list_a[i].next != NULL)
-				ft_printf("next: [%d, %d]", stack.list_a[i].next->index, stack.list_a[i].next->value);
-			ft_printf("\n");
-			i++;
-		}
-		t_parameters parameters;
-		ft_memset(&parameters, 0, sizeof(parameters));
-		parameters.stack = &stack;
-		parameters.process = LIST_A;
-		parameters.delete = -1;
-		parameters.direction = DOWN;
-		rotate(parameters);
-		parameters.direction = UP;
-		i = 0;
-		ft_printf("------------------------------------------------------------\n");
-		while (i < stack.size_a)
-		{
-			if (stack.list_a[i].prev != NULL)
-				ft_printf("previous: [%d, %d] ", stack.list_a[i].prev->index, stack.list_a[i].prev->value);
-			ft_printf("current: [%d, %d] ", stack.list_a[i].index, stack.list_a[i].value);
-			if (stack.list_a[i].next != NULL)
-				ft_printf("next: [%d, %d]", stack.list_a[i].next->index, stack.list_a[i].next->value);
-			ft_printf("\n");
-			i++;
-		}
+		data = ft_split(numbers, ' ');
+		ft_memset(&stack, 0, sizeof(stack));
+		if (parameter_controller(data))
+			set_stack(&stack, data);
+		free(numbers);
+		test(stack);
+		pb(&stack);
+		pb(&stack);
+		test(stack);
 	}
-	free(numbers);
 	return (0);
 }
