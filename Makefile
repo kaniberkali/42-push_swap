@@ -1,5 +1,5 @@
 NAME = library/libft/libft.a
-CC = gcc -Wall -Wextra -Werror
+CC = gcc -g -Wall -Wextra -Werror
 LIBFT = library/libft
 PRINTF = library/ft_printf/libftprintf.a
 PUSH_SWAP = push_swap

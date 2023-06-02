@@ -5,39 +5,53 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: akaniber <akaniber@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/10 12:55:06 by akaniber          #+#    #+#             */
-/*   Updated: 2023/04/10 16:10:18 by akaniber         ###   ########.fr       */
+/*   Created: 2023/05/29 14:30:31 by akaniber          #+#    #+#             */
+/*   Updated: 2023/05/29 16:37:12 by akaniber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sa(t_stack *stack)
+void	swap(t_list *list_a, t_list *list_b, int index_a, int index_b)
 {
-	int	value;
+	t_list *a;
+	t_list *b;
+	t_list tmp;
 
-	if (stack->size_a >= 2)
+	a = get(list_a, index_a);
+	b = get(list_b, index_b);
+	tmp	= *a;
+	a->value = b->value;
+	a->index = b->index;
+	b->index = tmp.index;
+	b->value = tmp.value;
+	if (list_a != list_b)
 	{
-		value = stack->list_a[0].value;
-		stack->list_a[0].value = stack->list_a[1].value;
-		stack->list_a[1].value = value;
+		a->next = b->next;
+		b->next = tmp.next;
 	}
 }
 
-void	sb(t_stack *stack)
+void	sa(t_list *list_a)
 {
-	int	value;
+	int	len;
 
-	if (stack->size_b >= 2)
-	{
-		value = stack->list_b[0].value;
-		stack->list_b[0].value = stack->list_b[1].value;
-		stack->list_b[1].value = value;
-	}
+	len = size(list_a);
+	if (len >= 2)
+		swap(list_a, list_a, 0, 1);
 }
 
-void	ss(t_stack *stack)
+void	sb(t_list *list_b)
 {
-	sa(stack);
-	sb(stack);
+	int	len;
+
+	len = size(list_b);
+	if (len >= 2)
+		swap(list_b, list_b, 0, 1);
+}
+
+void	ss(t_list *list_a, t_list *list_b)
+{
+	sa(list_a);
+	sb(list_b);
 }

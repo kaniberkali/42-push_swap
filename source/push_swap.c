@@ -5,68 +5,41 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: akaniber <akaniber@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/01 14:30:47 by akaniber          #+#    #+#             */
-/*   Updated: 2023/04/10 16:43:14 by akaniber         ###   ########.fr       */
+/*   Created: 2023/05/22 15:12:49 by akaniber          #+#    #+#             */
+/*   Updated: 2023/05/29 16:37:47 by akaniber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void test(t_stack stack)
+void	test(t_list	*list)
 {
-	int	i;
-	
-	i = 0;
-	ft_printf("----------------LIST A:%d--------------\n", stack.size_a);
-	while (stack.size_a > i)
+	t_list	*tmp;
+
+	tmp = list;
+	ft_printf("----------------------------\n");
+	while (tmp)
 	{
-		ft_printf("[%d] ",stack.list_a[i].value);
-		if (stack.list_a[i].next != NULL)
-			ft_printf("-> [%d]\n", stack.list_a[i].next->value);
-		else
-			ft_printf("-> NULL\n");
-		i++;
+		ft_printf("%d -> %d\n", tmp->index, tmp->value);
+		tmp = tmp->next;
 	}
-	ft_printf("--------------------------------------\n\n");
-	ft_printf("----------------LIST B:%d--------------\n",stack.size_b);
-	i = 0;
-	while (stack.size_b > i)
-	{
-		ft_printf("[%d] ", stack.list_b[i].value);
-		if (stack.list_b[i].next != NULL)
-			ft_printf("-> [%d]\n",stack.list_b[i].next->value);
-		else
-			ft_printf("-> NULL\n");
-		i++;
-	}
-	ft_printf("--------------------------------------\n");
 }
 
-int	main(int ac, char **av)
-{
-	t_stack	stack;
-	char	*numbers;
-	char	**data;
-	int	i;
+int main() {
+	t_list	**list;
+	t_list	*item;
+	t_list	*item2;
 
-	i = 1;
-	while (i < ac)
-	{
-		numbers = ft_strjoin(numbers, av[i]);
-		numbers = ft_strjoin(numbers, " ");
-		i++;
-	}
-	if (numbers)
-	{
-		data = ft_split(numbers, ' ');
-		ft_memset(&stack, 0, sizeof(stack));
-		if (parameter_controller(data))
-			set_stack(&stack, data);
-		free(numbers);
-		test(stack);
-		pb(&stack);
-		pb(&stack);
-		test(stack);
-	}
-	return (0);
+	list = (t_list **)malloc(sizeof(t_list *) + 1);
+	item = create(15);
+	item2 = create(25);
+	push(list, item);
+	push(list, item2);
+	test(*list);
+	sa(*list);
+	test(*list);
+	//ft_printf("%d", item3->value);
+	//swap(*list, *list, 0, 1);
+	//test(*list);
+    return 0;
 }
