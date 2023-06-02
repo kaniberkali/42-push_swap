@@ -37,6 +37,9 @@ void	swap(t_list	*list_a, t_list *list_b, int index_a, int index_b);
 void	sa(t_list *list_a);
 void	sb(t_list *list_b);
 void	ss(t_list *list_a, t_list *list_b);
-
+void	pa(t_list *list_a, t_list *list_b);
+void	pb(t_list	*list_a, t_list *list_b);
+void	remove(t_list *list, int index);
+void	test(t_list	*list);//kaldırıkcak
 
 #endif

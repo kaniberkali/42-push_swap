@@ -28,3 +28,15 @@ void	push(t_list **list, t_list *item)
 		(*list)->next = NULL;
 	}
 }
+
+void	pa(t_list *list_a, t_list *list_b)
+{
+	swap(list_a, list_b, 0, 1);
+	//remove(list_b, 0);
+}
+
+void	pb(t_list *list_a, t_list *list_b)
+{
+	swap(list_a, list_b, 0, 1);
+	//remove(list_a, 0);
+}

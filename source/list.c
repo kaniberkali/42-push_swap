@@ -23,11 +23,22 @@ t_list	*create(int	value)
 	return (item);
 }
 
-void	unshift(t_list **list, t_list *item)
+void	remove(t_list *list, int index)
 {
-	item->next = *list;
-	*list = item;
+    t_list	*item;
+	t_list	*tmp;
+
+	item = get(list, index);
+    tmp = item->next;
+    item->next = tmp->next;
+    free(tmp);
 }
+
+// void	unshift(t_list **list, t_list *item)
+// {
+// 	item->next = *list;
+// 	*list = item;
+// }
 
 t_list	*end(t_list	*list)
 {

@@ -26,18 +26,28 @@ void	test(t_list	*list)
 }
 
 int main() {
-	t_list	**list;
+	t_list	**list_a;
+	t_list	**list_b;
 	t_list	*item;
 	t_list	*item2;
+	t_list	*item3;
+	t_list	*item4;
 
-	list = (t_list **)malloc(sizeof(t_list *) + 1);
+	list_a = (t_list **)malloc(sizeof(t_list *) + 1);
+	list_b = (t_list **)malloc(sizeof(t_list *) + 1);
 	item = create(15);
 	item2 = create(25);
-	push(list, item);
-	push(list, item2);
-	test(*list);
-	sa(*list);
-	test(*list);
+	item3 = create(35);
+	item4 = create(45);
+	push(list_a, item);
+	push(list_a, item2);
+	push(list_b, item3);
+	push(list_b, item4);
+	test(*list_a);
+	test(*list_b);
+	pb(*list_a, *list_b);
+	test(*list_a);
+	test(*list_b);
 	//ft_printf("%d", item3->value);
 	//swap(*list, *list, 0, 1);
 	//test(*list);
