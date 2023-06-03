@@ -1,54 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akaniber <akaniber@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 14:30:57 by akaniber          #+#    #+#             */
-/*   Updated: 2023/06/03 15:38:37 by akaniber         ###   ########.fr       */
+/*   Updated: 2023/06/03 16:49:06 by akaniber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push(t_list **list, t_list *item)
+void	rotate(t_list **list)
 {
-	t_list	*last;
+    if (*list == NULL || (*list)->next == NULL)
+        return;
 
-	if (*list)
-	{
-		last = end(*list);
-		last->next = item;
-		item->next = NULL;
-	}
-	else
-	{
-		*list = item;
-		(*list)->next = NULL;
-	}
+    t_list *first = *list;
+    *list = (*list)->next;
+
+    t_list *last = *list;
+    while (last->next != NULL)
+        last = last->next;
+
+    last->next = first;
+    first->next = NULL;
 }
 
-void	pa(t_list **list_a, t_list **list_b)
+void	ra(t_list	**list_a)
 {
-    if (*list_b == NULL)
-        return;
-    
-    t_list *item = *list_b;
-    *list_b = item->next;
-    
-    item->next = *list_a;
-    *list_a = item;
+	rotate(list_a);
 }
 
-void	pb(t_list **list_a, t_list **list_b)
+void	rb(t_list	**list_b)
 {
-    if (*list_a == NULL)
-        return;
-    
-    t_list *item = *list_a;
-    *list_a = item->next;
-    
-    item->next = *list_b;
-    *list_b = item;
+	rotate(list_b);
+}
+
+void	rr(t_list	**list_a, t_list **list_b)
+{
+	rotate(list_a);
+	rotate(list_b);
 }

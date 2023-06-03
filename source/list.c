@@ -6,7 +6,7 @@
 /*   By: akaniber <akaniber@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 12:14:49 by akaniber          #+#    #+#             */
-/*   Updated: 2023/05/29 15:50:19 by akaniber         ###   ########.fr       */
+/*   Updated: 2023/06/03 16:34:18 by akaniber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,11 @@ void	remove(t_list *list, int index)
     free(tmp);
 }
 
-// void	unshift(t_list **list, t_list *item)
-// {
-// 	item->next = *list;
-// 	*list = item;
-// }
+ void	unshift(t_list **list, t_list *item)
+ {
+ 	item->next = *list;
+ 	*list = item;
+ }
 
 t_list	*end(t_list	*list)
 {
@@ -54,7 +54,7 @@ t_list	*end(t_list	*list)
 	return (tmp);
 }
 
-int	size(t_list *list)
+size_t	size(t_list *list)
 {
 	size_t	i;
 	t_list	*tmp;
