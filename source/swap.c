@@ -6,7 +6,7 @@
 /*   By: akaniber <akaniber@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 14:30:31 by akaniber          #+#    #+#             */
-/*   Updated: 2023/06/03 15:22:27 by akaniber         ###   ########.fr       */
+/*   Updated: 2023/06/04 15:10:19 by akaniber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,26 +32,32 @@ void	swap(t_list *list_a, t_list *list_b, int index_a, int index_b)
 	}
 }
 
-void	sa(t_list *list_a)
+void	sa(t_stack stack)
 {
 	int	len;
 
-	len = size(list_a);
+	len = size(*stack.list_a);
 	if (len >= 2)
-		swap(list_a, list_a, 0, 1);
+	{
+		swap(*stack.list_a, *stack.list_a, 0, 1);
+		ft_printf("sa\n");
+	}
 }
 
-void	sb(t_list *list_b)
+void	sb(t_stack stack)
 {
 	int	len;
 
-	len = size(list_b);
+	len = size(*stack.list_b);
 	if (len >= 2)
-		swap(list_b, list_b, 0, 1);
+	{
+		swap(*stack.list_b, *stack.list_b, 0, 1);
+		ft_printf("sa\n");
+	}
 }
 
-void	ss(t_list *list_a, t_list *list_b)
+void	ss(t_stack stack)
 {
-	sa(list_a);
-	sb(list_b);
+	sa(stack);
+	sb(stack);
 }

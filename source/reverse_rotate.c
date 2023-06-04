@@ -6,7 +6,7 @@
 /*   By: akaniber <akaniber@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 16:47:30 by akaniber          #+#    #+#             */
-/*   Updated: 2023/06/03 16:49:17 by akaniber         ###   ########.fr       */
+/*   Updated: 2023/06/04 15:10:26 by akaniber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,20 @@ void reverse_rotate(t_list **list)
     *list = last;
 }
 
-void	rra(t_list	**list_a)
+void	rra(t_stack stack)
 {
-	reverse_rotate(list_a);
+	reverse_rotate(stack.list_a);
+	ft_printf("rra\n");
 }
 
-void	rrb(t_list	**list_b)
+void	rrb(t_stack stack)
 {
-	reverse_rotate(list_b);
+	reverse_rotate(stack.list_b);
+	ft_printf("rrb\n");
 }
 
-void	rrr(t_list	**list_a, t_list **list_b)
+void	rrr(t_stack stack)
 {
-	reverse_rotate(list_a);
-	reverse_rotate(list_b);
+	reverse_rotate(stack.list_a);
+	reverse_rotate(stack.list_b);
 }

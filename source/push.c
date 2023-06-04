@@ -6,7 +6,7 @@
 /*   By: akaniber <akaniber@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 14:30:57 by akaniber          #+#    #+#             */
-/*   Updated: 2023/06/03 15:38:37 by akaniber         ###   ########.fr       */
+/*   Updated: 2023/06/04 15:09:14 by akaniber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,26 +29,32 @@ void	push(t_list **list, t_list *item)
 	}
 }
 
-void	pa(t_list **list_a, t_list **list_b)
+void	pa(t_stack stack)
 {
-    if (*list_b == NULL)
+	t_list	*item;
+
+    if (*stack.list_b == NULL)
         return;
     
-    t_list *item = *list_b;
-    *list_b = item->next;
+    item = *stack.list_b;
+    *stack.list_b = item->next;
     
-    item->next = *list_a;
-    *list_a = item;
+    item->next = *stack.list_a;
+    *stack.list_a = item;
+	ft_printf("pa\n");
 }
 
-void	pb(t_list **list_a, t_list **list_b)
+void	pb(t_stack stack)
 {
-    if (*list_a == NULL)
+	t_list	*item;
+
+    if (*stack.list_a == NULL)
         return;
     
-    t_list *item = *list_a;
-    *list_a = item->next;
+    item = *stack.list_a;
+    *stack.list_a = item->next;
     
-    item->next = *list_b;
-    *list_b = item;
+    item->next = *stack.list_b;
+    *stack.list_b = item;
+	ft_printf("pb\n");
 }
