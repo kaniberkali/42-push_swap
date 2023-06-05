@@ -6,11 +6,11 @@
 /*   By: akaniber <akaniber@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 14:30:31 by akaniber          #+#    #+#             */
-/*   Updated: 2023/06/04 15:10:19 by akaniber         ###   ########.fr       */
+/*   Updated: 2023/06/05 14:21:29 by akaniber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../source/push_swap.h"
 
 void	swap(t_list *list_a, t_list *list_b, int index_a, int index_b)
 {

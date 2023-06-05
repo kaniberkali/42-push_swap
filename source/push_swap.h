@@ -6,7 +6,7 @@
 /*   By: akaniber <akaniber@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 12:51:52 by akaniber          #+#    #+#             */
-/*   Updated: 2023/06/04 17:38:10 by akaniber         ###   ########.fr       */
+/*   Updated: 2023/06/05 16:50:33 by akaniber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,9 @@ void	rrr(t_stack stack);
 void	error(char *msg);
 void	free_all(char **str);
 void	controller(int argc, char **argv);
+char	*formatter(int argc, char **argv);
+int		is_sorted(t_stack stack);
+void	sort(t_stack stack);
+void	predict_sort(t_stack stack);
+
 #endif

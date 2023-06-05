@@ -1,49 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akaniber <akaniber@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/03 16:47:30 by akaniber          #+#    #+#             */
-/*   Updated: 2023/06/04 15:10:26 by akaniber         ###   ########.fr       */
+/*   Created: 2023/05/29 14:30:57 by akaniber          #+#    #+#             */
+/*   Updated: 2023/06/05 14:21:27 by akaniber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../source/push_swap.h"
 
-void reverse_rotate(t_list **list)
+void	rotate(t_list **list)
 {
     if (*list == NULL || (*list)->next == NULL)
         return;
 
+    t_list *first = *list;
+    *list = (*list)->next;
+
     t_list *last = *list;
-    t_list *second_last = NULL;
-
-    while (last->next != NULL) {
-        second_last = last;
+    while (last->next != NULL)
         last = last->next;
-    }
 
-    second_last->next = NULL;
-    last->next = *list;
-    *list = last;
+    last->next = first;
+    first->next = NULL;
 }
 
-void	rra(t_stack stack)
+void	ra(t_stack stack)
 {
-	reverse_rotate(stack.list_a);
-	ft_printf("rra\n");
+	rotate(stack.list_a);
+	ft_printf("ra\n");
 }
 
-void	rrb(t_stack stack)
+void	rb(t_stack stack)
 {
-	reverse_rotate(stack.list_b);
-	ft_printf("rrb\n");
+	rotate(stack.list_b);
+	ft_printf("rb\n");
 }
 
-void	rrr(t_stack stack)
+void	rr(t_stack stack)
 {
-	reverse_rotate(stack.list_a);
-	reverse_rotate(stack.list_b);
+	rotate(stack.list_a);
+	rotate(stack.list_b);
 }

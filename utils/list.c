@@ -6,11 +6,11 @@
 /*   By: akaniber <akaniber@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 12:14:49 by akaniber          #+#    #+#             */
-/*   Updated: 2023/06/04 15:27:05 by akaniber         ###   ########.fr       */
+/*   Updated: 2023/06/05 14:21:21 by akaniber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../source/push_swap.h"
 
 t_list	*create(int	value)
 {

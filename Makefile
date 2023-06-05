@@ -4,11 +4,12 @@ LIBFT = library/libft
 PRINTF = library/ft_printf/libftprintf.a
 PUSH_SWAP = push_swap
 SRCS = source/*.c
+UTILS = utils/*.c
 
 all: $(NAME) $(PRINTF) $(PUSH_SWAP)
 
-$(PUSH_SWAP) : $(NAME) $(PRINTF) $(SRCS)
-	$(CC) $(FLAGS) $(NAME) $(PRINTF) $(SRCS) -o $(PUSH_SWAP)
+$(PUSH_SWAP) : $(NAME) $(PRINTF) $(SRCS) $(UTILS)
+	$(CC) $(FLAGS) $(NAME) $(PRINTF) $(SRCS) $(UTILS) -o $(PUSH_SWAP)
 	@echo "FINISH"
 
 $(NAME):

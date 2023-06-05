@@ -6,11 +6,11 @@
 /*   By: akaniber <akaniber@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 17:25:01 by akaniber          #+#    #+#             */
-/*   Updated: 2023/06/04 17:38:09 by akaniber         ###   ########.fr       */
+/*   Updated: 2023/06/05 14:21:08 by akaniber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../source/push_swap.h"
 
 static int	contains(int num, char **argv, int i)
 {
@@ -44,7 +44,7 @@ void	controller(int argc, char **argv)
 {
 	int		i;
 	long	tmp;
-	char	**args;	
+	char	**args;
 
 	i = 0;
 	if (argc == 2)
