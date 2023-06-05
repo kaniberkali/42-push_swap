@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list.c                                             :+:      :+:    :+:   */
+/*   list_func.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akaniber <akaniber@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 12:14:49 by akaniber          #+#    #+#             */
-/*   Updated: 2023/06/05 14:21:21 by akaniber         ###   ########.fr       */
+/*   Updated: 2023/06/05 17:41:58 by akaniber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,29 +65,4 @@ t_list	*get(t_list	*list, int index)
 		index--;
 	}
 	return (tmp);
-}
-
-void	print(t_stack stack)
-{
-	t_list	*a_tmp;
-	t_list	*b_tmp;
-
-	a_tmp = *stack.list_a;
-	b_tmp = *stack.list_b;
-	while (a_tmp || b_tmp)
-	{
-		if (a_tmp != NULL)
-			ft_printf("%d ", a_tmp->value);
-		else
-			ft_printf("  ");
-		if (b_tmp != NULL)
-			ft_printf("%d\n", b_tmp->value);
-		else
-			ft_printf(" \n");
-		if (a_tmp != NULL)
-			a_tmp = a_tmp->next;
-		if (b_tmp != NULL)
-			b_tmp = b_tmp->next;
-	}
-	ft_printf("_ _\na b\n");
 }
