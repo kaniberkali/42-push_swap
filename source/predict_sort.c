@@ -6,7 +6,7 @@
 /*   By: akaniber <akaniber@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 16:45:50 by akaniber          #+#    #+#             */
-/*   Updated: 2023/06/06 12:46:37 by akaniber         ###   ########.fr       */
+/*   Updated: 2023/06/06 17:14:02 by akaniber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,27 @@
 
 static void	sort_three_chars(t_stack stack)
 {
-	t_list	*list;
+	int		value;
+	int		next_value;
+	int		next_next_value;
 
-	list = *stack.list_a;
-	if (list->value > list->next->value && list->value > list->next->next->value
-		&& list->next->value > list->next->next->value)
+	value = (*stack.list_a)->value;
+	next_value = (*stack.list_a)->next->value;
+	next_next_value = (*stack.list_a)->next->next->value;
+	if (value > next_value && value > next_next_value
+		&& next_value > next_next_value)
 	{
 		rra(stack);
 		rra(stack);
 		sa(stack);
 	}
-	else if (list->value > list->next->value && list->value > list->next->next->value)
+	else if (value > next_value && value > next_next_value)
 		ra(stack);
-	else if (list->value < list->next->value && list->value > list->next->next->value)
+	else if (value < next_value && value > next_next_value)
 		rra(stack);
-	else if (list->value > list->next->value && list->value < list->next->next->value)
+	else if (value > next_value && value < next_next_value)
 		sa(stack);
-	else if (list->value < list->next->value && list->value < list->next->next->value)
+	else if (value < next_value && value < next_next_value)
 	{
 		rra(stack);
 		sa(stack);
@@ -49,7 +53,7 @@ static void	sort_four_chars(t_stack stack)
 	if (index == 3 && !is_sorted(stack))
 		rra(stack);
 	if (is_sorted(stack))
-		return;
+		return ;
 	pb(stack);
 	sort_three_chars(stack);
 	pa(stack);
@@ -69,7 +73,7 @@ static void	sort_five_chars(t_stack stack)
 	if (index == 4 && !is_sorted(stack))
 		rra(stack);
 	if (is_sorted(stack))
-		return;
+		return ;
 	pb(stack);
 	sort_four_chars(stack);
 	pa(stack);
@@ -81,7 +85,7 @@ void	predict_sort(t_stack stack)
 
 	len = size(*stack.list_a);
 	if (is_sorted(stack))
-		return;
+		return ;
 	if (len == 2)
 		ra(stack);
 	else if (len == 3)

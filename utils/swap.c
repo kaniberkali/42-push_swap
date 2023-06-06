@@ -6,7 +6,7 @@
 /*   By: akaniber <akaniber@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 14:30:31 by akaniber          #+#    #+#             */
-/*   Updated: 2023/06/05 14:21:29 by akaniber         ###   ########.fr       */
+/*   Updated: 2023/06/06 16:05:34 by akaniber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void	swap(t_list *list_a, t_list *list_b, int index_a, int index_b)
 {
-	t_list *a;
-	t_list *b;
-	t_list tmp;
+	t_list	*a;
+	t_list	*b;
+	t_list	tmp;
 
 	a = get(list_a, index_a);
 	b = get(list_b, index_b);
-	tmp	= *a;
+	tmp = *a;
 	a->value = b->value;
 	a->index = b->index;
 	b->index = tmp.index;

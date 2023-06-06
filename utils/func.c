@@ -6,7 +6,7 @@
 /*   By: akaniber <akaniber@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 17:35:09 by akaniber          #+#    #+#             */
-/*   Updated: 2023/06/06 15:41:15 by akaniber         ###   ########.fr       */
+/*   Updated: 2023/06/06 16:51:10 by akaniber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*formatter(int argc, char **argv)
 	int		i;
 	char	*numbers;
 
-	i  = 1;
+	i = 1;
 	numbers = NULL;
 	while (argv[i] && argc > i)
 	{
@@ -60,4 +60,14 @@ void	set_index_all(t_stack stack)
 		index++;
 		item = min_with_not_index(*stack.list_a);
 	}
+}
+
+int	get_bits(int nbr)
+{
+	int	bits;
+
+	bits = 0;
+	while ((nbr) >> bits != 0)
+		bits++;
+	return (bits);
 }

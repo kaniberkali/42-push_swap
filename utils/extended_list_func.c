@@ -6,7 +6,7 @@
 /*   By: akaniber <akaniber@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 17:39:51 by akaniber          #+#    #+#             */
-/*   Updated: 2023/06/06 12:49:59 by akaniber         ###   ########.fr       */
+/*   Updated: 2023/06/06 16:35:02 by akaniber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int	index_of(t_list *list, t_list *item)
 int	is_sorted(t_stack stack)
 {
 	t_list	*list;
-	int	value;
+	int		value;
 
 	list = *stack.list_a;
 	if (!size(*stack.list_b) && size(list))
@@ -79,7 +79,6 @@ int	is_sorted(t_stack stack)
 	return (0);
 }
 
-
 void	print(t_stack stack)
 {
 	t_list	*a_tmp;
@@ -94,7 +93,7 @@ void	print(t_stack stack)
 		else
 			ft_printf("       ");
 		if (b_tmp != NULL)
-			ft_printf("%d->%d\n", b_tmp->value,b_tmp->index);
+			ft_printf("%d->%d\n", b_tmp->value, b_tmp->index);
 		else
 			ft_printf("\n");
 		if (a_tmp != NULL)

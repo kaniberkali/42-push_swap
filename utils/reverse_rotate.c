@@ -6,28 +6,29 @@
 /*   By: akaniber <akaniber@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 16:47:30 by akaniber          #+#    #+#             */
-/*   Updated: 2023/06/05 14:21:25 by akaniber         ###   ########.fr       */
+/*   Updated: 2023/06/06 16:08:18 by akaniber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../source/push_swap.h"
 
-void reverse_rotate(t_list **list)
+void	reverse_rotate(t_list **list)
 {
-    if (*list == NULL || (*list)->next == NULL)
-        return;
+	t_list	*last;
+	t_list	*second_last;
 
-    t_list *last = *list;
-    t_list *second_last = NULL;
-
-    while (last->next != NULL) {
-        second_last = last;
-        last = last->next;
-    }
-
-    second_last->next = NULL;
-    last->next = *list;
-    *list = last;
+	last = *list;
+	second_last = NULL;
+	if (*list == NULL || (*list)->next == NULL)
+		return ;
+	while (last->next != NULL)
+	{
+		second_last = last;
+		last = last->next;
+	}
+	second_last->next = NULL;
+	last->next = *list;
+	*list = last;
 }
 
 void	rra(t_stack stack)

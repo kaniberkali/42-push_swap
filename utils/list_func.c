@@ -6,13 +6,13 @@
 /*   By: akaniber <akaniber@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 12:14:49 by akaniber          #+#    #+#             */
-/*   Updated: 2023/06/06 15:41:00 by akaniber         ###   ########.fr       */
+/*   Updated: 2023/06/06 16:01:39 by akaniber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../source/push_swap.h"
 
-t_list	*create(int	value)
+t_list	*create(int value)
 {
 	t_list	*item;
 
@@ -32,7 +32,7 @@ t_list	*end(t_list	*list)
 	{
 		tmp = tmp->next;
 		if (tmp->next == NULL)
-			break;
+			break ;
 	}
 	return (tmp);
 }
@@ -61,7 +61,7 @@ t_list	*get(t_list	*list, int index)
 	{
 		tmp = tmp->next;
 		if (tmp->next == NULL)
-			break;
+			break ;
 		index--;
 	}
 	return (tmp);

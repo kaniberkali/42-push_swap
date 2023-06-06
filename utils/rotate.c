@@ -6,7 +6,7 @@
 /*   By: akaniber <akaniber@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 14:30:57 by akaniber          #+#    #+#             */
-/*   Updated: 2023/06/05 14:21:27 by akaniber         ###   ########.fr       */
+/*   Updated: 2023/06/06 16:06:30 by akaniber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 void	rotate(t_list **list)
 {
-    if (*list == NULL || (*list)->next == NULL)
-        return;
+	t_list	*first;
+	t_list	*last;
 
-    t_list *first = *list;
-    *list = (*list)->next;
-
-    t_list *last = *list;
-    while (last->next != NULL)
-        last = last->next;
-
-    last->next = first;
-    first->next = NULL;
+	if (*list == NULL || (*list)->next == NULL)
+		return ;
+	first = *list;
+	*list = (*list)->next;
+	last = *list;
+	while (last->next != NULL)
+		last = last->next;
+	last->next = first;
+	first->next = NULL;
 }
 
 void	ra(t_stack stack)

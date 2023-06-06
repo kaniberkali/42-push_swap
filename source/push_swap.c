@@ -6,7 +6,7 @@
 /*   By: akaniber <akaniber@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 15:12:49 by akaniber          #+#    #+#             */
-/*   Updated: 2023/06/06 15:42:17 by akaniber         ###   ########.fr       */
+/*   Updated: 2023/06/06 17:30:30 by akaniber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ t_stack	init(char *str)
 	return (stack);
 }
 
-int main(int argc, char **argv) {
+int	main(int argc, char **argv)
+{
 	t_stack	stack;
 	char	*str;
 
@@ -44,9 +45,10 @@ int main(int argc, char **argv) {
 		stack = init(str);
 		free(str);
 		set_index_all(stack);
+		sort(stack);
 		print(stack);
 	}
 	else
 		error("Error");
-    return (0);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: akaniber <akaniber@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 14:30:57 by akaniber          #+#    #+#             */
-/*   Updated: 2023/06/05 14:21:23 by akaniber         ###   ########.fr       */
+/*   Updated: 2023/06/06 16:34:49 by akaniber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,12 @@ void	pa(t_stack stack)
 {
 	t_list	*item;
 
-    if (*stack.list_b == NULL)
-        return;
-    
-    item = *stack.list_b;
-    *stack.list_b = item->next;
-    
-    item->next = *stack.list_a;
-    *stack.list_a = item;
+	if (*stack.list_b == NULL)
+		return ;
+	item = *stack.list_b;
+	*stack.list_b = item->next;
+	item->next = *stack.list_a;
+	*stack.list_a = item;
 	ft_printf("pa\n");
 }
 
@@ -48,13 +46,11 @@ void	pb(t_stack stack)
 {
 	t_list	*item;
 
-    if (*stack.list_a == NULL)
-        return;
-    
-    item = *stack.list_a;
-    *stack.list_a = item->next;
-    
-    item->next = *stack.list_b;
-    *stack.list_b = item;
+	if (*stack.list_a == NULL)
+		return ;
+	item = *stack.list_a;
+	*stack.list_a = item->next;
+	item->next = *stack.list_b;
+	*stack.list_b = item;
 	ft_printf("pb\n");
 }

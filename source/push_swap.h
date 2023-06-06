@@ -6,20 +6,21 @@
 /*   By: akaniber <akaniber@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 12:51:52 by akaniber          #+#    #+#             */
-/*   Updated: 2023/06/06 13:46:34 by akaniber         ###   ########.fr       */
+/*   Updated: 2023/06/06 16:55:16 by akaniber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include "../library/ft_printf/ft_printf.h"
-#include "../library/libft/libft.h"
+# include "../library/ft_printf/ft_printf.h"
+# include "../library/libft/libft.h"
 
-typedef struct s_list {
-    int value;
-	int	index;
-    struct s_list* next;
+typedef struct s_list
+{
+	int				value;
+	int				index;
+	struct s_list	*next;
 }	t_list;
 
 typedef struct s_stack {
@@ -27,7 +28,7 @@ typedef struct s_stack {
 	t_list	**list_b;
 }	t_stack;
 
-t_list	*create(int	value);
+t_list	*create(int value);
 void	unshift(t_list **list, t_list *item);
 t_list	*end(t_list	*list);
 size_t	size(t_list *list);
@@ -61,5 +62,6 @@ int		index_of(t_list *list, t_list *item);
 t_list	*min(t_list *list);
 t_list	*max(t_list *list);
 t_list	*min_with_not_index(t_list *list);
-
+void	complex_sort(t_stack stack);
+int		get_bits(int nbr);
 #endif
