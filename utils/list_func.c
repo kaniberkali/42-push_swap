@@ -6,7 +6,7 @@
 /*   By: akaniber <akaniber@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 12:14:49 by akaniber          #+#    #+#             */
-/*   Updated: 2023/06/05 17:41:58 by akaniber         ###   ########.fr       */
+/*   Updated: 2023/06/06 15:41:00 by akaniber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,20 @@ t_list	*get(t_list	*list, int index)
 		index--;
 	}
 	return (tmp);
+}
+
+t_list	*min_with_not_index(t_list *list)
+{
+	t_list	*min;
+
+	min = NULL;
+	while (list)
+	{
+		if (!min && list->index == -1)
+			min = list;
+		if (min && list->value < min->value && list->index == -1)
+			min = list;
+		list = list->next;
+	}
+	return (min);
 }

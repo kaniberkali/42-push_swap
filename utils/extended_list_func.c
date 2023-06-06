@@ -6,7 +6,7 @@
 /*   By: akaniber <akaniber@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 17:39:51 by akaniber          #+#    #+#             */
-/*   Updated: 2023/06/05 17:42:17 by akaniber         ###   ########.fr       */
+/*   Updated: 2023/06/06 12:49:59 by akaniber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,21 @@ t_list	*min(t_list *list)
 		list = list->next;
 	}
 	return (min);
+}
+
+t_list	*max(t_list *list)
+{
+	t_list	*max;
+
+	max = list;
+	list = list->next;
+	while (list)
+	{
+		if (list->value > max->value)
+			max = list;
+		list = list->next;
+	}
+	return (max);
 }
 
 int	index_of(t_list *list, t_list *item)
@@ -75,17 +90,17 @@ void	print(t_stack stack)
 	while (a_tmp || b_tmp)
 	{
 		if (a_tmp != NULL)
-			ft_printf("%d ", a_tmp->value);
+			ft_printf("%d->%d ", a_tmp->value, a_tmp->index);
 		else
-			ft_printf("  ");
+			ft_printf("       ");
 		if (b_tmp != NULL)
-			ft_printf("%d\n", b_tmp->value);
+			ft_printf("%d->%d\n", b_tmp->value,b_tmp->index);
 		else
-			ft_printf(" \n");
+			ft_printf("\n");
 		if (a_tmp != NULL)
 			a_tmp = a_tmp->next;
 		if (b_tmp != NULL)
 			b_tmp = b_tmp->next;
 	}
-	ft_printf("_ _\na b\n");
+	ft_printf("_   _\na   b\n");
 }

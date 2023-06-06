@@ -6,7 +6,7 @@
 /*   By: akaniber <akaniber@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 12:51:52 by akaniber          #+#    #+#             */
-/*   Updated: 2023/06/05 16:50:33 by akaniber         ###   ########.fr       */
+/*   Updated: 2023/06/06 13:46:34 by akaniber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,10 @@ char	*formatter(int argc, char **argv);
 int		is_sorted(t_stack stack);
 void	sort(t_stack stack);
 void	predict_sort(t_stack stack);
+void	set_index_all(t_stack stack);
+int		index_of(t_list *list, t_list *item);
+t_list	*min(t_list *list);
+t_list	*max(t_list *list);
+t_list	*min_with_not_index(t_list *list);
 
 #endif

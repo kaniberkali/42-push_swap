@@ -6,7 +6,7 @@
 /*   By: akaniber <akaniber@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 16:45:50 by akaniber          #+#    #+#             */
-/*   Updated: 2023/06/05 16:52:37 by akaniber         ###   ########.fr       */
+/*   Updated: 2023/06/06 12:46:37 by akaniber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,6 @@ static void	sort_five_chars(t_stack stack)
 
 void	predict_sort(t_stack stack)
 {
-	t_list	*list;
 	int		len;
 
 	len = size(*stack.list_a);

@@ -6,7 +6,7 @@
 /*   By: akaniber <akaniber@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 14:25:00 by akaniber          #+#    #+#             */
-/*   Updated: 2023/06/05 17:40:17 by akaniber         ###   ########.fr       */
+/*   Updated: 2023/06/06 12:47:14 by akaniber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ void	sort(t_stack stack)
 		return;
 	if (len <= 5)
 		predict_sort(stack);
-	else
-		complex_sort(stack);
+	//else
+	//	complex_sort(stack);
 }

@@ -6,7 +6,7 @@
 /*   By: akaniber <akaniber@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 17:35:09 by akaniber          #+#    #+#             */
-/*   Updated: 2023/06/05 16:53:04 by akaniber         ###   ########.fr       */
+/*   Updated: 2023/06/06 15:41:15 by akaniber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,19 @@ char	*formatter(int argc, char **argv)
 		i++;
 	}
 	return (numbers);
+}
+
+void	set_index_all(t_stack stack)
+{
+	int		index;
+	t_list	*item;
+
+	index = 0;
+	item = min_with_not_index(*stack.list_a);
+	while (item)
+	{
+		item->index = index;
+		index++;
+		item = min_with_not_index(*stack.list_a);
+	}
 }

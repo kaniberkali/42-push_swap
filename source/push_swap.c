@@ -6,7 +6,7 @@
 /*   By: akaniber <akaniber@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 15:12:49 by akaniber          #+#    #+#             */
-/*   Updated: 2023/06/05 15:01:46 by akaniber         ###   ########.fr       */
+/*   Updated: 2023/06/06 15:42:17 by akaniber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,7 @@ int main(int argc, char **argv) {
 		str = formatter(argc, argv);
 		stack = init(str);
 		free(str);
-		print(stack);
-		sort(stack);
+		set_index_all(stack);
 		print(stack);
 	}
 	else
