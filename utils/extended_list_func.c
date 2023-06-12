@@ -6,7 +6,7 @@
 /*   By: akaniber <akaniber@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 17:39:51 by akaniber          #+#    #+#             */
-/*   Updated: 2023/06/06 16:35:02 by akaniber         ###   ########.fr       */
+/*   Updated: 2023/06/09 12:58:01 by akaniber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int	is_sorted(t_stack stack)
 	int		value;
 
 	list = *stack.list_a;
-	if (!size(*stack.list_b) && size(list))
+	if (size(list))
 	{
 		value = list->value;
 		list = list->next;

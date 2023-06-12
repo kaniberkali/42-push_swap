@@ -6,7 +6,7 @@
 /*   By: akaniber <akaniber@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 16:45:50 by akaniber          #+#    #+#             */
-/*   Updated: 2023/06/06 17:14:02 by akaniber         ###   ########.fr       */
+/*   Updated: 2023/06/10 17:14:00 by akaniber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,11 @@ static void	sort_four_chars(t_stack stack)
 	int	index;
 
 	index = index_of(*stack.list_a, min(*stack.list_a));
-	if ((index == 1 || index == 2) && !is_sorted(stack))
+	if ((index == 1 || index == 2))
 		ra(stack);
-	if (index == 2 && !is_sorted(stack))
+	if (index == 2)
 		ra(stack);
-	if (index == 3 && !is_sorted(stack))
+	if (index == 3)
 		rra(stack);
 	if (is_sorted(stack))
 		return ;
@@ -64,13 +64,13 @@ static void	sort_five_chars(t_stack stack)
 	int	index;
 
 	index = index_of(*stack.list_a, min(*stack.list_a));
-	if ((index == 1 || index == 2) && !is_sorted(stack))
+	if ((index == 1 || index == 2))
 		ra(stack);
-	if (index == 2 && !is_sorted(stack))
+	if (index == 2)
 		ra(stack);
-	if ((index == 3 || index == 4) && !is_sorted(stack))
+	if (index == 3)
 		rra(stack);
-	if (index == 4 && !is_sorted(stack))
+	if ((index == 3 || index == 4))
 		rra(stack);
 	if (is_sorted(stack))
 		return ;

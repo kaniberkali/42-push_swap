@@ -6,7 +6,7 @@
 /*   By: akaniber <akaniber@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 15:12:49 by akaniber          #+#    #+#             */
-/*   Updated: 2023/06/06 17:30:30 by akaniber         ###   ########.fr       */
+/*   Updated: 2023/06/10 17:16:48 by akaniber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	main(int argc, char **argv)
 	t_stack	stack;
 	char	*str;
 
-	if (argc >= 2)
+	if (argc >= 2 && argv[1][0] != '\0')
 	{
 		controller(argc, argv);
 		str = formatter(argc, argv);
@@ -46,9 +46,7 @@ int	main(int argc, char **argv)
 		free(str);
 		set_index_all(stack);
 		sort(stack);
-		print(stack);
 	}
-	else
-		error("Error");
+	while (1) {}
 	return (0);
 }
